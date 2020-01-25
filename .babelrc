@@ -1,0 +1,29 @@
+//Solution for the Error :" Cannot read property 'bindings' of null "
+
+{
+    "presets": [
+        ["@babel/preset-env", {
+            "targets": {
+                "browsers": [
+                    "last 5 versions",
+                    "ie >= 8"
+                ]
+            }
+        }]
+    ]
+}
+
+/*
+{
+    "presets": [
+        ["env", {
+            "targets": {
+                "browsers": [
+                    "last 5 versions",
+                    "ie >= 8"
+                ]
+            }
+        }]
+    ]
+}
+*/

@@ -1,0 +1,79 @@
+Webpack : Code Splitting, Loading many types of assets like SAAS and images, Decreasing the size of bundle size.
+
+Babel is used to convert the Modern Script to ES5, so that all browser will support the ESnext(ES6 and higher verisons of javascript).
+
+To install any package as a development dependency, we use --save-dev command
+
+Webpack Development Server :It is a NPM package. It reloads the file, whenever we make a change in file
+
+In webpack we have Entry Points, Output, Loader and plugins.
+
+Plugins allows us to do complex processing of Input files.
+
+It is also a dev dependency. (install html-webpack-plugin --save-dev)
+
+It is basically used to copy the contents of one file into other file.
+
+Babel : It is a javascript compiler.
+        Babel is a toolchain that is mainly used to convert ECMAScript 2015+ code into a backwards 
+        compatible version of JavaScript in old browsers or environments
+
+Bable Packages : 1. Babel-code(Responsible for conversion of ES6/Next to ES5)
+                 2. Babel-preset-env(This will take care, whether all the modern feature are converted back to ES5 or not
+                 3. Babel-loader(Responsible for webpack to load babel files. Loaders in webpack
+                    allows us to import or to load all kind of different files. More importantly to process that.
+                    . It converts SAAS to CSS code or convert ESnext to ES5 JS code)
+
+We can install multiple packages at a time.
+Command to install Babel : npm install babel-core babel-preset-env babel-loader --save-dev
+
+Difference between dependency and devdependency: 
+The difference between these two, is that devDependencies are modules which are only required during 
+development, while dependencies are modules which are also required at runtime. 
+To save a dependency as a devDependency on installation we need to do an npm install --save-dev , 
+instead of just an npm install --save.
+
+Babel Polyfill : There are few things which we cannot convert from ES6/next to ES5
+                 Promises Array.from, there are not present in ES5. Using polyfill, it implements same
+                 code in ES5.
+Because this is a polyfill (which will run before your source code), We need it to be a dependency, 
+not a devDependency.
+
+Since Babel only transforms syntax (like arrow functions), you can use babel-polyfill in order to 
+support new globals such as Promise or new native methods like String.padStart (left-pad). 
+It uses core-js and regenerator.
+
+
+Basically installing Babel is a 3 step process.
+1. Install packages mentiones above with the rules and loader.
+2. Create .babelrc configuration file in order to tell babel which stuff we want to convert to ES5.
+3. Polyfill, in order to the features which are not convertible to ES5(Missing in ES5)
+
+
+
+**************** MVC Architecture *******************
+
+In Search.js(Modal) functionality, we will do AJAX calls from a certain certain search queries to get recepies 
+from an API.
+In searchView.js(View), we will get the search queries from the user interface. And also where we print the result of 
+the search.
+Controller brings these 2 things together.
+Modal and View never had a communication with each other
+Modal is always concerned about the data and apps logic.
+While the view gets and displays data from and to to the user interface
+
+
+
+
+// Project start:-
+
+We will make http request for AJAX call
+fetch is used to call AJAX
+but it will not work on old browser
+So we will use axios
+It will work the exact same way as axios
+We will use axios()  function to do the http request
+This will work in all browser alike the fetch
+it will return directly a JSON file, unlike fetch, which finishes in 2 steps(wait for data to be fetch
+and to let that convert to JSON)
+
